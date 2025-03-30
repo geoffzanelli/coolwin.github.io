@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolwin - 库因web3 | Cryptocurrency Project Hunting Platform</title>
+    <link href="https://fastly.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            --primary: #1F67FF;
+            --primary-dark: #0D4EDA;
+            --secondary: #F7FAFC;
+            --dark: #1A202C;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1F67FF 0%, #0D4EDA 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(31, 103, 255, 0.15);
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        .search-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(31, 103, 255, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(31, 103, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(31, 103, 255, 0);
+            }
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+    <!-- Header -->
+    <header id="5f986b8a-3553-4fc9-a1fa-58ab5e0c2f02" class="fixed w-full bg-white shadow-sm z-50">
+        <div id="9f3ddb75-fc25-4186-b8c5-d12d6ba16835" class="container mx-auto px-4">
+            <div id="6e60d25d-a07d-4ff9-9760-875e9be8ca19" class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div id="dd716e7e-41d4-4018-ba80-8e4ea345340a" class="flex items-center space-x-2">
+                    <div id="bc08a77e-534a-4b40-a3dd-4de86eaf452a" class="h-8 w-8 rounded-full gradient-bg flex items-center justify-center">
+                        <span id="c909ccaa-90f1-4120-8ac3-645dafed0f05" class="text-white font-bold text-lg">C</span>
+                    </div>
+                    <span id="6db6b3bb-f599-4f8c-82fd-5dd0a8a05f7e" class="font-bold text-xl">Coolwin <span class="text-gray-500 text-sm">库因web3</span></span>
+                </div>
+                
+                <!-- Navigation - Desktop -->
+                <nav id="cb61dcd5-d09c-4a08-967b-5b32cfd22ec4" class="hidden md:flex items-center space-x-8">
+                    <a href="#" id="aa126299-871e-44ba-bd2c-a072c0ec3c42" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Home</a>
+                    <a href="#" id="54932e0d-b29e-4158-a2aa-6dabf156e09a" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Projects</a>
+                    <a href="#" id="0249f6e5-71a3-4c28-a325-24e81a70c34c" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Learn</a>
+                    <a href="#" id="650df7ee-2a45-49a0-9d9b-7e4137c3e723" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Community</a>
+                </nav>
+                
+                <!-- Action Buttons -->
+                <div id="3a17907a-5c13-4e8a-a625-65137391a2e1" class="hidden md:flex items-center space-x-4">
+                    <!-- Language Switch Button -->
+                    <button id="61913f37-77e3-4631-996f-fc76f2086ae4" class="px-3 py-1 border border-gray-300 rounded-md text-sm flex items-center hover:bg-gray-100 transition-colors">
+                        <span id="1000e9ce-427d-4b94-ba24-ebf05337983f" class="mr-1">EN</span>
+                        <i id="1057cbe0-d6ee-4adc-876d-611c0ba1fa27" class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    
+                    <a href="#" id="76aa458c-b69b-41d0-acf6-fe351268c553" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Login</a>
+                    <a href="#" id="a311dae8-13a1-483e-9d46-c4a1d95e8ac4" class="btn-primary px-4 py-2 rounded-md font-medium">Sign Up</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="31dbb74b-a6d0-4df0-9b6d-ff4369c64a87" class="md:hidden text-gray-700">
+                    <i id="e06fa3ee-b1ce-4374-af23-3b7a573c6d3a" class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu (Hidden by default) -->
+        <div id="3c590fa7-2599-4ccc-9e3c-7434380e4548" class="md:hidden hidden bg-white border-t" x-show="mobileMenuOpen">
+            <div id="e73c305a-048f-4882-99d7-d2f5ce9f9dcb" class="container mx-auto px-4 py-2">
+                <nav id="a6147ace-ff01-4311-847d-34d1d6c8c855" class="flex flex-col space-y-3">
+                    <a href="#" id="bbc328df-d06d-47d7-b726-0a6e5256ac73" class="py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors">Home</a>
+                    <a href="#" id="df3d912b-2257-446c-9815-eb66c9afd532" class="py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors">Projects</a>
+                    <a href="#" id="fbc1a494-f2a7-41c5-abd8-a6f5a70389f7" class="py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors">Learn</a>
+                    <a href="#" id="e6a27298-ed28-498c-b9ff-64861375739b" class="py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors">Community</a>
+                    <div id="ed5b459e-b09f-42b7-9c29-af8d64633fb8" class="flex items-center justify-between pt-2 border-t">
+                        <a href="#" id="3f28f40c-0ea0-4194-9d24-0b19814e34dc" class="py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors">Login</a>
+                        <a href="#" id="6b389493-c2d8-4c7e-ada8-63ef9f5e3b07" class="btn-primary px-4 py-2 rounded-md font-medium">Sign Up</a>
+                        <!-- Language Switch Button -->
+                        <button id="15d8d4b4-fa66-4825-ad4e-4ad906977c60" class="px-3 py-1 border border-gray-300 rounded-md text-sm flex items-center">
+                            <span id="e27b9cb1-aa75-4b2c-aad1-75c9a208d2ac" class="mr-1">EN</span>
+                            <i id="8d12ef58-704e-49c5-a3d5-96207f0e17e7" class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="fc1a92db-ae0a-4758-8fa1-846ca2044a2e" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-blue-50 to-white">
+        <div id="0f9ab659-4e5a-4d60-8a9b-240de4490a3c" class="container mx-auto px-4">
+            <div id="de34d905-c42d-422d-946c-9903f0d9e104" class="flex flex-col md:flex-row items-center">
+                <div id="60d9fc5f-7825-48fb-bef8-e4b25efa581f" class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h1 id="693ad4f0-07c6-4603-a5ab-160a29e1ac09" class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-900">Discover the Next <span class="text-blue-600">Big Thing</span> in Crypto</h1>
+                    <p id="8fd57799-7227-472b-8668-acd7eea14c63" class="text-xl text-gray-600 mb-8">Your trusted platform for finding high-potential cryptocurrency projects before they go mainstream.</p>
+                    
+                    <!-- Search Bar -->
+                    <div id="48342bf3-1e10-4c26-a52c-e19671e536ec" class="relative search-animation">
+                        <input 
+                            id="a72d96d3-0bd7-4e6d-a34a-64a1673eb97c"
+                            type="text" 
+                            placeholder="Search for projects, tokens, or categories..." 
+                            class="w-full px-5 py-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        >
+                        <button id="f2e29a50-f296-45ad-b98e-3a3a9386e9f6" class="absolute right-2 top-2 btn-primary p-2 rounded-md">
+                            <i id="40f7954f-91f5-4b78-a50e-7ffb629cda96" class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div id="74c06698-765e-40cf-a4af-3d698f5e0356" class="flex mt-8 text-center">
+                        <div id="bba3ffa5-64cb-43ba-b821-31353c48299a" class="flex-1">
+                            <p id="83684c39-e97c-4355-9776-8f41a419c8a3" class="text-2xl font-bold text-blue-600">500+</p>
+                            <p id="9c7167a4-1da5-4bdb-b6c6-70d21598fa08" class="text-sm text-gray-500">Projects Listed</p>
+                        </div>
+                        <div id="8ddc2ac5-2ad6-4f68-a8a4-88cbdbccb10d" class="flex-1">
+                            <p id="9f66286d-4b52-4ff9-bd3e-84e45cc99573" class="text-2xl font-bold text-blue-600">50K+</p>
+                            <p id="d71e4cf9-5ea5-4e60-a02c-7b755e9941bc" class="text-sm text-gray-500">Community Members</p>
+                        </div>
+                        <div id="42d3b8b3-56f3-4a6a-af65-8c82146f7c1b" class="flex-1">
+                            <p id="49cc1010-7b20-4c17-8e0a-ef67dc470584" class="text-2xl font-bold text-blue-600">$100M+</p>
+                            <p id="6a2a2c4e-8f5d-4a57-a456-319fd3fa0696" class="text-sm text-gray-500">Invested via Platform</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="b3240f2b-90d8-4ab6-bbea-937cd5e9b44a" class="w-full md:w-1/2">
+                    <img 
+                        id="1e7452c9-6e54-4ee0-b6a8-bc6b5a8e1502"
+                        src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                        alt="Cryptocurrency visualization" 
+                        class="w-full h-auto rounded-lg shadow-xl"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="b3ac89cd-e6d2-476c-81f8-9c7f3b394d43" class="py-16 bg-white">
+        <div id="34c5bed0-a6a0-4ea3-8b0b-d1b11df42381" class="container mx-auto px-4">
+            <div id="9a27aa6c-d681-430f-98bb-e318a0ae5b95" class="text-center mb-12">
+                <h2 id="133098b9-8809-4ad0-9da9-cd2aaf8ed1ed" class="text-3xl font-bold mb-4">Featured Projects</h2>
+                <p id="0aa6e0bb-576d-491d-b65d-06a28c99b442" class="text-gray-600 max-w-2xl mx-auto">Discover high-potential cryptocurrency projects carefully vetted by our team of experts. Get early access to the next big opportunity.</p>
+            </div>
+            
+            <div id="10478fc5-c023-48e1-a1e9-7dce3d5284bc" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div id="7432bf78-78e7-45ed-bd31-de7299638626" class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover border border-gray-100">
+                    <div id="88020148-f61e-4d2c-a85a-354278b39390" class="h-48 overflow-hidden">
+                        <img 
+                            id="56a4a10e-7d48-4048-93a5-f97e36002621"
+                            src="https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                            alt="DeFi Protocol" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div id="82f35e3c-184a-4cb9-921c-adabfd035e60" class="p-6">
+                        <div id="b8f3f7b4-cd65-4362-b0e3-e87cf890a581" class="flex items-center justify-between mb-3">
+                            <h3 id="aae8cee1-1ea5-4517-9a4e-29b40c99a7bf" class="text-xl font-semibold">NexusDeFi</h3>
+                            <span id="cc7f7e08-e209-4e0b-9578-8c58de49d6ad" class="text-xs py-1 px-2 bg-blue-100 text-blue-600 rounded-full">DeFi</span>
+                        </div>
+                        <p id="c777f944-74ed-45e0-800e-61b83d5ee20a" class="text-gray-600 mb-4">An innovative DeFi protocol bringing cross-chain liquidity and yield farming opportunities to users.</p>
+                        <div id="4b3bc683-8169-422b-920d-854e3b08bbaa" class="flex justify-between items-center">
+                            <div id="57a5e5b3-09af-478a-9f33-3cfa1aa45c19">
+                                <span id="201a65aa-5bfa-4f92-acf3-e681c86fe4ea" class="text-sm text-gray-500">Raised</span>
+                                <p id="6cee9553-d1de-4525-8962-b610945a1a96" class="font-semibold text-gray-800">$8.5M</p>
+                            </div>
+                            <a href="#" id="b1beb581-6a6c-4cc4-8108-4a53be095068" class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div id="801f41dc-04a3-40e2-a424-ece0c653fe20" class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover border border-gray-100">
+                    <div id="03b95cb7-40fa-4534-82e4-50d0df8ce1c2" class="h-48 overflow-hidden">
+                        <img 
+                            id="d212de56-b22e-4090-8a47-6984cc69f376"
+                            src="https://images.unsplash.com/photo-1642013127480-cf931180858a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                            alt="NFT Marketplace" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div id="b1086ec7-a0ac-4109-bf7a-e198bd64712a" class="p-6">
+                        <div id="9b4b7954-c5bc-4839-a661-28caddbd2efa" class="flex items-center justify-between mb-3">
+                            <h3 id="69b5f4f3-e552-4fa3-ac92-7c69fef18bcb" class="text-xl font-semibold">ArtBlock</h3>
+                            <span id="c6595557-9a61-4019-bd02-9763a5fa0a48" class="text-xs py-1 px-2 bg-purple-100 text-purple-600 rounded-full">NFT</span>
+                        </div>
+                        <p id="9bd2f3d4-bfa0-4f4e-8c4f-af7c0c6c697c" class="text-gray-600 mb-4">A curated NFT marketplace connecting artists directly with collectors, featuring exclusive digital art drops.</p>
+                        <div id="e9224aaa-e699-4b1a-a613-7035a45b8b56" class="flex justify-between items-center">
+                            <div id="b4b06951-5be0-4216-84cc-2a179b53fbd0">
+                                <span id="56116b70-c1d1-4281-8e93-c01382b5756a" class="text-sm text-gray-500">Raised</span>
+                                <p id="7418ceb3-384b-4a4f-a875-67328116f7ec" class="font-semibold text-gray-800">$12M</p>
+                            </div>
+                            <a href="#" id="b8103dbc-48c9-4e29-80bd-818315dd7c14" class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div id="5433c1e0-5a6a-4c36-9d0a-fa2cfbccea66" class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover border border-gray-100">
+                    <div id="0ee79022-2ac8-40eb-9e50-ddbfd512ac50" class="h-48 overflow-hidden">
+                        <img 
+                            id="be7138be-9cee-45d5-89d6-133fe59ef226"
+                            src="https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                            alt="Layer 2 Solution" 
+                            class="w-full h-full object-cover"
+                        >
+                    </div>
+                    <div id="0c3dccda-56a6-448e-a893-7c0fe1af5c10" class="p-6">
+                        <div id="f480f3db-d261-4802-b968-e97139288e9c" class="flex items-center justify-between mb-3">
+                            <h3 id="049dcca3-3d46-4fec-a9d5-ce5215c9033f" class="text-xl font-semibold">ScaleChain</h3>
+                            <span id="c0231c16-4124-43d1-9bc2-65ce8e8ff04c" class="text-xs py-1 px-2 bg-green-100 text-green-600 rounded-full">Layer 2</span>
+                        </div>
+                        <p id="f2b20c88-93e5-41fc-b8ca-16dc1e7e9100" class="text-gray-600 mb-4">A high-performance Layer 2 scaling solution for Ethereum, enabling fast and low-cost transactions.</p>
+                        <div id="954164e3-6a12-406d-8fcf-fa8a86afab62" class="flex justify-between items-center">
+                            <div id="a5f50793-099e-4dbd-afd5-857827fc48d7">
+                                <span id="d2976ac7-70a4-4d1b-bf28-d6e97c0cab18" class="text-sm text-gray-500">Raised</span>
+                                <p id="79e7de0f-1c35-4110-9958-1f9f97ba05f3" class="font-semibold text-gray-800">$22.5M</p>
+                            </div>
+                            <a href="#" id="39f41d61-8505-4243-97c5-57981b3f5f38" class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="c9615675-fcc6-4850-8280-acdcecbc48e6" class="text-center mt-12">
+                <a href="#" id="a7e0570b-7d68-4cbc-91ab-881597855e89" class="btn-primary inline-block px-8 py-3 rounded-md font-medium">
+                    Explore All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="dc6dfefb-e0d9-4b03-9923-cef60993519f" class="py-16 bg-blue-50">
+        <div id="fa60f24c-cec0-4adc-a0f8-2401e7c4e686" class="container mx-auto px-4">
+            <div id="bbe2e617-797c-4cdb-898a-b0c5a9338b0d" class="flex flex-col md:flex-row items-center">
+                <div id="bf3fa34f-fff1-4cdc-b9cd-f7b2b2a6334c" class="w-full md:w-1/2 mb-8 md:mb-0">
+                    <img 
+                        id="77bae269-0d5d-4bbf-b493-9a23dd487f61"
+                        src="https://images.unsplash.com/photo-1552068751-34cb5cf055b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                        alt="Coolwin Team" 
+                        class="w-full h-auto rounded-lg shadow-lg"
+                    >
+                </div>
+                <div id="f69c36ef-5df1-4d87-9d53-857f3a2cd271" class="w-full md:w-1/2 md:pl-12">
+                    <h2 id="3e7a6e94-6253-483d-bc34-7a28370bebcf" class="text-3xl font-bold mb-6">About Coolwin <span class="text-sm font-normal text-gray-500">库因web3</span></h2>
+                    <p id="7850f13b-adb2-4920-b7cb-1f431c11c039" class="text-gray-700 mb-4">Coolwin is a premier cryptocurrency project hunting platform dedicated to discovering the most promising innovations in the blockchain space.</p>
+                    <p id="3bcb95da-d47a-4e30-906d-6707a53273b1" class="text-gray-700 mb-6">Our mission is to bridge the gap between early-stage crypto projects and forward-thinking investors. We provide thorough research, due diligence, and exclusive insights to help our community make informed decisions in the rapidly evolving Web3 landscape.</p>
+                    
+                    <div id="4f4eb882-a30a-4a62-9c5e-47a468ff7ea8" class="grid grid-cols-2 gap-4 mb-8">
+                        <div id="6a33ea87-9138-414d-af6e-870cf486f03d" class="flex items-center">
+                            <div id="86da1def-b595-4506-b6fe-feb67cc916a3" class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                                <i id="4e410703-9cc2-457c-90a8-81b7553f5d6c" class="fas fa-shield-alt text-white"></i>
+                            </div>
+                            <div id="bcf951e3-ee40-43f3-b596-b4530680ebaa">
+                                <h4 id="16fd3ac4-59b4-43c7-ab59-5b72af289489" class="font-semibold">Rigorous Vetting</h4>
+                                <p id="0c81c779-4199-4fff-aace-d1794bcac0da" class="text-sm text-gray-600">All projects are thoroughly analyzed</p>
+                            </div>
+                        </div>
+                        <div id="73cefdaf-f2c9-4823-8499-7a8e13ee0e13" class="flex items-center">
+                            <div id="86d0fbe4-1eec-4016-987e-a08518618be7" class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                                <i id="b201380c-1d52-46e9-ad79-860d45cf6263" class="fas fa-users text-white"></i>
+                            </div>
+                            <div id="b2d1ea4c-02c7-4460-aef1-9d253eb382d2">
+                                <h4 id="43cba2b4-f236-48f0-921a-64afeb5eac66" class="font-semibold">Active Community</h4>
+                                <p id="a49e5935-1e0d-42f0-9418-4c9285822ee7" class="text-sm text-gray-600">Diverse global network of investors</p>
+                            </div>
+                        </div>
+                        <div id="d5fc4cb5-efb7-4872-9052-6980e2ce7ab1" class="flex items-center">
+                            <div id="5f7d3d79-e983-4f19-a1f3-6bef429d546f" class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                                <i id="5c0326d4-9128-4e40-b7d2-9246bdb5d0e9" class="fas fa-lightbulb text-white"></i>
+                            </div>
+                            <div id="a8c81956-a735-44d2-990e-0e830a4a8ff6">
+                                <h4 id="4f6a0d59-1bf7-4312-a68d-b4ef8aa109e9" class="font-semibold">Exclusive Insights</h4>
+                                <p id="596c7b7f-819a-4b44-8af0-9b9b6ec8908e" class="text-sm text-gray-600">Early access to trending projects</p>
+                            </div>
+                        </div>
+                        <div id="fa8ae2da-0ab1-4750-9db8-570eb00bfcfd" class="flex items-center">
+                            <div id="2b798467-bd52-465e-a2ff-75e315d8dc7b" class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                                <i id="476e7bc2-5410-46a1-b9b3-1327397b0424" class="fas fa-chart-line text-white"></i>
+                            </div>
+                            <div id="e293759b-fa6f-4968-a40d-6781ce87c5b2">
+                                <h4 id="bdbbb554-8d1e-4700-b96f-26522d5b5a7c" class="font-semibold">Market Analytics</h4>
+                                <p id="392c3737-8f34-44a3-bee0-65eb8e9a3efd" class="text-sm text-gray-600">Data-driven investment signals</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" id="f395863a-e72e-4c89-9c61-9d471174229e" class="btn-primary inline-block px-6 py-3 rounded-md font-medium">
+                        Learn More About Our Mission
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="80483dc8-929e-4582-90e4-310b0e12b1fe" class="py-16 gradient-bg">
+        <div id="acb87d15-a102-43f1-a226-092d013b8bb9" class="container mx-auto px-4 text-center text-white">
+            <h2 id="a4f0592e-cece-47e9-a7b4-12bb61fcf248" class="text-3xl font-bold mb-4">Ready to Discover Promising Crypto Projects?</h2>
+            <p id="60ed4cd1-337c-40ec-b47c-2f2639c31e3e" class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">Join our community of forward-thinking investors and get early access to exclusive opportunities in the crypto space.</p>
+            <div id="50e6bebd-9d8a-4039-8647-c12f4e8a3d95" class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" id="1d9f63e5-e1af-4d3a-8d21-3f016f9e59e9" class="px-8 py-3 bg-white text-blue-600 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+                    Sign Up Now
+                </a>
+                <a href="#" id="f0c27a7e-7e5a-4402-8dab-8a120fd79326" class="px-8 py-3 border border-white text-white rounded-md font-semibold hover:bg-blue-700 transition-colors">
+                    Browse Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="25f76ef2-90c1-4f53-bae5-cc783cb20174" class="bg-gray-900 text-white pt-16 pb-8">
+        <div id="42ded250-d2ef-4938-85ac-22220153fb23" class="container mx-auto px-4">
+            <div id="4cb8dcc3-ebfb-4c88-b88d-a6e4bdd3c7d2" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Brand Column -->
+                <div id="65119564-8e6e-4a94-8c8e-7ee9c2b49834">
+                    <div id="a944f70f-b698-40fd-940e-e0263f10bcb0" class="flex items-center space-x-2 mb-6">
+                        <div id="af73ba5e-91c0-4a9a-be24-ed2b8f9b7e65" class="h-8 w-8 rounded-full gradient-bg flex items-center justify-center">
+                            <span id="dd10aea2-efb6-4283-b4ca-b49d9ef14c16" class="text-white font-bold text-lg">C</span>
+                        </div>
+                        <span id="fc0d1ef5-97c6-41ef-8a6e-1282599ece53" class="font-bold text-xl">Coolwin <span class="text-gray-400 text-sm">库因web3</span></span>
+                    </div>
+                    <p id="07c50758-9b70-4ca0-850e-f3ac0ef9828c" class="text-gray-400 mb-6">Your trusted platform for discovering high-potential cryptocurrency projects before they go mainstream.</p>
+                    <div id="cda54944-df88-403a-bb32-0b001f86ec7f" class="flex space-x-4">
+                        <a href="#" id="a1cdc21e-6aa2-443b-9ecc-f9998db7fa33" class="text-gray-400 hover:text-white transition-colors">
+                            <i id="5583f7ce-756c-4bc4-816b-c614a1a12532" class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" id="8c8172da-314a-406d-9d66-a739b825a633" class="text-gray-400 hover:text-white transition-colors">
+                            <i id="54316a49-9066-4244-a7ee-44efc46acebb" class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" id="c28d9569-80f5-4e6f-99c5-04120e60669c" class="text-gray-400 hover:text-white transition-colors">
+                            <i id="3064ca07-fda0-4d50-9ee5-1620f9443ba9" class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" id="0814c245-b571-46c0-9c21-9e90da090d3f" class="text-gray-400 hover:text-white transition-colors">
+                            <i id="c0a2be8c-765f-47d9-97bd-e635f29088aa" class="fab fa-medium"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div id="f0c37a2a-1731-4e8f-9063-6ef738eee190">
+                    <h4 id="e9f45fe2-ec5f-4958-aa2f-2f1d320da2b8" class="text-lg font-semibold mb-5">Quick Links</h4>
+                    <ul id="fe686fcc-4b30-4c12-84db-c4e86c54c9a3" class="space-y-3">
+                        <li id="3c74964b-4520-470d-88aa-9afd796a986f"><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li id="c8e7273d-f984-49ce-8305-e50b577fd1e1"><a href="#" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                        <li id="03ff2b72-0a33-4fa0-866b-6a80c3f6cac1"><a href="#" class="text-gray-400 hover:text-white transition-colors">Learn</a></li>
+                        <li id="ccb0a9b9-ccb9-4072-9a42-88a84f06523b"><a href="#" class="text-gray-400 hover:text-white transition-colors">Community</a></li>
+                        <li id="9b6f3d3d-6e12-4a82-8949-6c082f9023fe"><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div id="442e0eb1-6d5b-4564-8d56-2c1493b49e17">
+                    <h4 id="ac381c8c-1603-4562-96d4-e92775fb146c" class="text-lg font-semibold mb-5">Resources</h4>
+                    <ul id="f7e40945-ef49-41b8-87dc-b7f63bb474aa" class="space-y-3">
+                        <li id="c9711a19-ca5a-4071-87f5-e8a326c44db0"><a href="#" class="text-gray-400 hover:text-white transition-colors">Research Reports</a></li>
+                        <li id="2fecfb1a-6141-4057-b6ec-c4435419e097"><a href="#" class="text-gray-400 hover:text-white transition-colors">Market Analysis</a></li>
+                        <li id="118bab8a-f34f-4dd3-83a2-3e47679a4bb6"><a href="#" class="text-gray-400 hover:text-white transition-colors">Investment Guide</a></li>
+                        <li id="9bf67d6e-1eb0-4c65-9723-bf78aad0b42a"><a href="#" class="text-gray-400 hover:text-white transition-colors">Crypto Education</a></li>
+                        <li id="51f4c730-57dc-42c3-96ed-5cbe21f0e743"><a href="#" class="text-gray-400 hover:text-white transition-colors">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div id="42f950a7-78fa-419a-969f-8ce746d5b262">
+                    <h4 id="9eca3fd4-b6d7-4437-b24b-539f054ba680" class="text-lg font-semibold mb-5">Contact</h4>
+                    <ul id="6eda027f-5532-47ca-bac6-87bd01303c85" class="space-y-3">
+                        <li id="57edb002-a86f-4c80-93dc-3a87c6a54eb3" class="flex items-center">
+                            <i id="72b65b04-7d69-4f32-b658-3c4e360a2910" class="fas fa-envelope text-gray-400 mr-3"></i>
+                            <span id="2efc4dfa-571b-471c-a2fb-45fba9dd05d7" class="text-gray-400">hello@coolwin.io</span>
+                        </li>
+                        <li id="583c0464-66b7-4332-b46a-b164fdea6e85" class="flex items-center">
+                            <i id="43d8aca0-4fac-4d09-aa3c-fb899e2224d5" class="fas fa-map-marker-alt text-gray-400 mr-3"></i>
+                            <span id="73d17d17-d659-4551-9332-0581e850e3f0" class="text-gray-400">Singapore | Hong Kong</span>
+                        </li>
+                        <li id="04ade675-6947-43b0-8b6c-1ebb2745774e">
+                            <form id="f23f3341-83aa-4fa6-bac3-6ff7473158be" class="mt-2">
+                                <label id="c4e68009-97cc-47b9-8304-689e34485540" class="block mb-2 text-sm text-gray-400">Subscribe to our newsletter</label>
+                                <div id="05821a9d-30e5-4329-bc93-599d1c8d6c60" class="flex">
+                                    <input id="eeb8607e-7276-4ed1-9602-c7606bd9aaab" type="email" placeholder="Your email" class="px-3 py-2 bg-gray-800 text-gray-200 rounded-l-md focus:outline-none text-sm flex-grow">
+                                    <button id="015f2b3e-fd76-4171-95b5-7cdac5f27308" type="submit" class="btn-primary px-4 py-2 rounded-r-md text-sm">
+                                        <i id="49b33f96-7828-444e-b093-0c7899b00552" class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="e879beac-bdf2-4bf9-9a25-9b8ba3e93da2" class="pt-8 mt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <div id="c9c27c3f-6b53-4d19-87df-a35200e0b1e3" class="flex flex-col md:flex-row justify-between items-center">
+                    <p id="b3743875-6c41-40ca-a59b-68c40c4857b6">© 2023 Coolwin 库因web3. All rights reserved.</p>
+                    <div id="1147e4de-3455-426d-b7f6-6317c95554a7" class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" id="9d7f0776-0d5c-493d-8b67-11dc8faeacb0" class="hover:text-gray-300 transition-colors">Terms of Service</a>
+                        <a href="#" id="e085e39f-f327-448a-b951-72199d3bdf9e" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
+                        <a href="#" id="5f3e7656-6c9e-4cc9-8b1c-90bd150b865f" class="hover:text-gray-300 transition-colors">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('31dbb74b-a6d0-4df0-9b6d-ff4369c64a87').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('3c590fa7-2599-4ccc-9e3c-7434380e4548');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
