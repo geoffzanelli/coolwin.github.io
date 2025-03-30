@@ -1,0 +1,171 @@
+// 项目展示轮播功能
+document.addEventListener('DOMContentLoaded', function() {
+    // 项目数据
+    const projects = [
+        {
+            id: 1,
+            name: 'NexusDeFi',
+            description: '跨链DeFi协议，支持多链资产交换与流动性挖矿',
+            raised: '3,500,000 USDT',
+            progress: 75,
+            logo: './images/project1.png',
+            website: 'https://nexusdefi.io',
+            twitter: 'https://twitter.com/NexusDeFi',
+            telegram: 'https://t.me/NexusDeFi'
+        },
+        {
+            id: 2,
+            name: 'ArtBlock',
+            description: 'NFT创作与交易平台，专注于生成艺术和数字收藏品',
+            raised: '2,800,000 USDT',
+            progress: 65,
+            logo: './images/project2.png',
+            website: 'https://artblock.io',
+            twitter: 'https://twitter.com/ArtBlock',
+            telegram: 'https://t.me/ArtBlock'
+        },
+        {
+            id: 3,
+            name: 'ScaleChain',
+            description: '高性能Layer2扩容解决方案，支持智能合约与DApp部署',
+            raised: '5,200,000 USDT',
+            progress: 85,
+            logo: './images/project3.png',
+            website: 'https://scalechain.io',
+            twitter: 'https://twitter.com/ScaleChain',
+            telegram: 'https://t.me/ScaleChain'
+        }
+    ];
+    
+    // 获取项目容器元素
+    const projectContainer = document.getElementById('featured-projects');
+    if (!projectContainer) return;
+    
+    // 渲染项目卡片
+    function renderProjects() {
+        projectContainer.innerHTML = '';
+        
+        projects.forEach(project => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'project-card';
+            projectCard.innerHTML = `
+                <div class="project-header">
+                    <img src="${project.logo}" alt="${project.name}" class="project-logo"><h3>${project.name}</h3></div>
+                <p class="project-desc">${project.description}</p>
+                <div class="project-stats">
+                    <div class="stats-item">
+                        <span class="label">已筹集</span>
+                        <span class="value">${project.raised}</span></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: ${project.progress}%"></div>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <button class="btn btn-primary" onclick="showProjectDetails(${project.id})">查看详情</button>
+                <div class="social-links">
+                        <a href="${project.website}" target="_blank" title="官网"><i class="fa fa-globe"></i></a><a href="${project.twitter}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="${project.telegram}" target="_blank" title="Telegram"><i class="fa fa-telegram"></i></a>
+                    </div>
+                </div>
+            `;
+            projectContainer.appendChild(projectCard);
+        });
+    }
+    
+    // 初始渲染
+    renderProjects();// 轮播控制
+    let currentIndex = 0;
+    const totalProjects = projects.length;
+    const prevBtn = document.getElementById('prev-project');
+    const nextBtn = document.getElementById('next-project');
+    
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+            updateProjectDisplay();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalProjects;
+            updateProjectDisplay();
+        });
+    }
+    
+    function updateProjectDisplay() {
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach((card, index) => {
+            if (index === currentIndex) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+    }
+    
+    // 自动轮播
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalProjects;
+        updateProjectDisplay();
+    }, 5000);
+    
+    // 初始显示
+    updateProjectDisplay();
+});
+
+// 项目详情弹窗功能
+window.showProjectDetails = function(projectId) {
+    // 根据ID获取项目信息
+    const project = projects.find(p => p.id === projectId);
+    if (!project) return;// 创建弹窗
+    const modal = document.createElement('div');
+    modal.className = 'project-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img src="${project.logo}" alt="${project.name}" class="project-logo-lg">
+                <h2>${project.name}</h2>
+            </div>
+            <div class="modal-body">
+                <p class="project-desc">${project.description}</p>
+                <div class="project-details">
+                    <div class="detail-item">
+                        <h4>项目进度</h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: ${project.progress}%"></div></div>
+                <span>${project.progress}%</span>
+                    </div>
+                    <div class="detail-item">
+                        <h4>已筹集资金</h4>
+                        <p>${project.raised}</p>
+                    </div>
+                    <div class="detail-item"><h4>项目链接</h4>
+                        <div class="social-links-lg">
+                            <a href="${project.website}" target="_blank" title="官网">
+                                <i class="fa fa-globe"></i> 官方网站
+                            </a><a href="${project.twitter}" target="_blank" title="Twitter">
+                                <i class="fa fa-twitter"></i> Twitter
+                            </a><a href="${project.telegram}" target="_blank" title="Telegram"><i class="fa fa-telegram"></i> Telegram</a>
+                        </div></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary">参与项目</button>
+                <button class="btn btn-secondary">添加到收藏</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // 关闭弹窗
+    const closeBtn = modal.querySelector('.close-modal');
+    closeBtn.addEventListener('click', () => {document.body.removeChild(modal);
+    });
+    
+    // 点击弹窗外部关闭
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+        }
+    });
+};
